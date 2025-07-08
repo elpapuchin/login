@@ -1,0 +1,134 @@
+:root {
+  --primary-color: #1e1e1e;
+  --accent-color: #007acc;
+  --background-light: #f9f9f9;
+  --input-border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Canvas full-screen detrás de todo */
+#snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--background-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  width: 800px;
+  max-width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow);
+  background: #fff;
+}
+
+.form-section, .image-section {
+  flex: 1;
+}
+
+.form-section {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h1 {
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+  background: transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-section input:focus {
+  outline: none;
+  border-bottom-color: var(--accent-color);
+}
+
+.form-section .remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: .9rem;
+}
+
+.form-section .remember input {
+  margin: 0;
+  width: auto;
+}
+
+.form-section .remember label {
+  margin-left: 20px;
+}
+
+.form-section button {
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-section button:hover {
+  background-color: #005a9e;
+}
+
+.form-section .footer {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #888;
+}
+
+.image-section {
+  background: url('images/logo3.png') center center no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-direction: column;
+  }
+  .image-section {
+    height: 200px;
+  }
+}
